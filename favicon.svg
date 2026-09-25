@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <rect width="32" height="32" fill="#141c2e"/>
+  <!-- cristal de la mina, dibujado a bloques de 2px para que case con el pixel art -->
+  <path d="M8 10h16v2H8z" fill="#9ce9ff"/>
+  <path d="M6 12h20v4H6z" fill="#6fd3ff"/>
+  <path d="M8 16h16v4H8z" fill="#3a8fe0"/>
+  <path d="M12 20h8v4h-8z" fill="#2a6fb8"/>
+  <path d="M14 24h4v2h-4z" fill="#1d5289"/>
+  <path d="M10 12h4v4h-4z" fill="#d8f6ff"/>
+</svg>

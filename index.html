@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Crystal Caves — aventura minera</title>
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+<div id="loading">Cargando la mina…</div>
+
+<!-- ---------- HUD ---------- -->
+<div id="hud">
+  <div class="hudBox"><img src="assets/kenney_pixel-platformer/Tiles/Characters/tile_0009.png" alt="vidas"><span id="hudLives">× 3</span></div>
+  <div class="hudBox"><img src="assets/kenney_pixel-platformer/Tiles/tile_0067.png" alt="cristales"><span id="hudCrystals">0 / 0</span></div>
+  <div class="hudBox"><img src="assets/kenney_pixel-platformer-industrial-expansion/Tiles/tile_0025.png" alt="munición"><span id="hudAmmo">× 6</span></div>
+  <div class="hudBox"><img id="hudKey" src="assets/kenney_pixel-platformer/Tiles/tile_0027.png" alt="llave"></div>
+  <div class="hudBox" id="hudScoreBox">⛏ <span id="hudScore">0</span></div>
+  <div id="hudLevel"></div>
+</div>
+
+<div id="toast"></div>
+<div id="fade"></div>
+
+<!-- ---------- Controles táctiles ---------- -->
+<div id="touch">
+  <div class="tbtn tpause" id="touchPause">⏸</div>
+  <div class="tside l">
+    <div class="tbtn" data-k="left">◀</div>
+    <div class="tbtn" data-k="right">▶</div>
+  </div>
+  <div class="tside r">
+    <div class="tbtn" data-k="down">▼</div>
+    <div class="tbtn" data-k="up">▲</div>
+    <div class="tbtn" data-k="shoot">✦</div>
+    <div class="tbtn big" data-k="jump">▲</div>
+  </div>
+</div>
+
+<!-- ---------- Menú ---------- -->
+<div id="menu" class="overlay show">
+  <div class="card">
+    <h1>CRYSTAL CAVES</h1>
+    <p class="subtitle">Baja a la mina, recoge todos los cristales y sal de una pieza.<br>
+      Babylon.js + tiles pixel de Kenney (CC0)</p>
+    <button id="btnPlay" class="primary">▶ BAJAR A LA MINA</button>
+    <button id="btnGuide">📖 Guía del minero</button>
+    <div class="mapTitle">Mapa de la mina</div>
+    <div id="mineMap"></div>
+    <div class="help">
+      <kbd>←</kbd> <kbd>→</kbd> moverse · <kbd>Espacio</kbd> saltar · <kbd>X</kbd> disparar ·
+      <kbd>↑</kbd> <kbd>↓</kbd> trepar · <kbd>R</kbd> reiniciar · <kbd>Esc</kbd> pausa<br>
+      🎮 mando y 📱 táctil compatibles
+    </div>
+    <div class="scoreLine">Puntuación acumulada: <b id="menuScore">0</b></div>
+    <div class="volRow">🔊 <input type="range" id="volMenu" min="0" max="100"></div>
+  </div>
+</div>
+
+<!-- ---------- Pausa ---------- -->
+<div id="pause" class="overlay">
+  <div class="card small">
+    <h2>Pausa</h2>
+    <div class="volRow">🔊 <input type="range" id="volPause" min="0" max="100"></div>
+    <button id="btnResume" class="primary">Continuar</button>
+    <button id="btnRetry">↺ Reiniciar nivel</button>
+    <button id="btnPauseMenu">Salir al mapa</button>
+  </div>
+</div>
+
+<!-- ---------- Nivel superado ---------- -->
+<div id="complete" class="overlay">
+  <div class="card small">
+    <h2 id="compTitle">¡Nivel superado!</h2>
+    <div id="compStats" class="stats"></div>
+    <button id="btnNext" class="primary">Siguiente nivel ➜</button>
+    <button id="btnCompMenu">Mapa de la mina</button>
+  </div>
+</div>
+
+<!-- ---------- Game over ---------- -->
+<div id="gameover" class="overlay">
+  <div class="card small">
+    <h2>💀 Te quedaste sin vidas</h2>
+    <div id="overStats" class="stats"></div>
+    <button id="btnOverRetry" class="primary">↺ Volver a intentarlo</button>
+    <button id="btnOverMenu">Mapa de la mina</button>
+  </div>
+</div>
+
+<!-- ---------- Guía ---------- -->
+<div id="guide" class="overlay">
+  <div class="card wide">
+    <h2>📖 Guía del minero</h2>
+    <p class="subtitle">Todo lo que te vas a encontrar ahí abajo.</p>
+    <div id="guideList"></div>
+    <button id="btnGuideBack" class="primary">Volver</button>
+  </div>
+</div>
+
+<script src="lib/babylon.js"></script>
+<script src="bundle.19133dc54c.js"></script>
+</body>
+</html>
