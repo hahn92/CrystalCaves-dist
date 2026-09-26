@@ -1,0 +1,9 @@
+Sprites del minero
+==================
+
+minero-*.png se generan con tools/extraer-minero.py a partir de
+hoja-original.png, una hoja de sprites aportada por el autor del proyecto.
+
+La hoja original NO es de Kenney y no viene con licencia CC0 declarada:
+antes de usar el juego en algo público conviene confirmar su procedencia y
+sus condiciones de uso. El resto del arte (tiles) sí es CC0 de kenney.nl.
