@@ -46,6 +46,10 @@
     <p class="subtitle">Baja a la mina, recoge todos los cristales y sal de una pieza.<br>
       Babylon.js + pixel art dibujado para el juego</p>
     <button id="btnPlay" class="primary">▶ BAJAR A LA MINA</button>
+    <div class="modes">
+      <button id="btnInfinite" class="modeBtn">♾ Modo infinito<small id="infRecord"></small></button>
+      <button id="btnEditor" class="modeBtn">🛠 Creador de niveles<small>Dibuja, comprueba y juega los tuyos</small></button>
+    </div>
     <button id="btnGuide">📖 Guía del minero</button>
     <div class="mapTitle">Mapa de la mina</div>
     <div id="mineMap"></div>
@@ -90,6 +94,46 @@
   </div>
 </div>
 
+<!-- ---------- Creador de niveles ---------- -->
+<div id="editor" class="overlay">
+  <div class="edPanel">
+    <div class="edBar">
+      <input id="edName" maxlength="40" spellcheck="false" aria-label="Nombre del nivel">
+      <label>Ancho <input id="edW" type="number" min="16" max="120"></label>
+      <label>Alto <input id="edH" type="number" min="10" max="40"></label>
+      <label>Música <select id="edTheme"></select></label>
+      <span class="edSpacer"></span>
+      <button id="edCheck">✔ Comprobar</button>
+      <button id="edPlay" class="primary">▶ Probar</button>
+    </div>
+    <div class="edBar">
+      <button id="edNew">Nuevo</button>
+      <select id="edSlots" aria-label="Niveles guardados"></select>
+      <button id="edOpen">Abrir</button>
+      <button id="edSave">💾 Guardar</button>
+      <button id="edDelete">🗑 Borrar</button>
+      <button id="edExport">⇪ Exportar</button>
+      <button id="edImport">⇩ Importar</button>
+      <span class="edSpacer"></span>
+      <span id="edCoords"></span>
+      <button id="edZoomOut" title="Alejar">−</button><span id="edZoom">2×</span><button id="edZoomIn" title="Acercar">+</button>
+      <button id="edExit">Salir</button>
+    </div>
+    <div class="edMain">
+      <div id="edPalette"></div>
+      <div id="edWrap"><canvas id="edCanvas"></canvas></div>
+    </div>
+    <div id="edStatus"></div>
+    <div id="edTextBox">
+      <textarea id="edText" spellcheck="false" aria-label="Nivel como texto"></textarea>
+      <div>
+        <button id="edTextOk" class="primary">Cargar este nivel</button>
+        <button id="edTextClose">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ---------- Guía ---------- -->
 <div id="guide" class="overlay">
   <div class="card wide">
@@ -101,6 +145,6 @@
 </div>
 
 <script src="lib/babylon.js"></script>
-<script src="bundle.35b14034cf.js"></script>
+<script src="bundle.9fbbe5283f.js"></script>
 </body>
 </html>
