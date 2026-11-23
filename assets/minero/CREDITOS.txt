@@ -1,9 +1,10 @@
 Sprites del minero
 ==================
 
-minero-*.png se generan con tools/extraer-minero.py a partir de
-hoja-original.png, una hoja de sprites aportada por el autor del proyecto.
+minero-*.png los genera tools/dibujar-minero.py, donde el minero está
+dibujado en texto (una letra por píxel). Es arte hecho para este juego, como
+el resto (assets/mina/, que sale de tools/dibujar-mina.py).
 
-La hoja original NO es de Kenney y no viene con licencia CC0 declarada:
-antes de usar el juego en algo público conviene confirmar su procedencia y
-sus condiciones de uso. El resto del arte (tiles) sí es CC0 de kenney.nl.
+Para cambiar al minero se edita ese script y se vuelve a ejecutar
+(python3 tools/dibujar-minero.py). Los PNG no se retocan a mano: test.py
+comprueba que salen del dibujo.

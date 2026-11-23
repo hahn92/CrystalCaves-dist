@@ -1,0 +1,10 @@
+Arte de la mina
+===============
+
+Todos los PNG de esta carpeta (roca, fondo, objetos, peligros y enemigos) los
+genera tools/dibujar-mina.py. Es arte hecho para este juego, con la paleta y
+el contorno del minero (tools/dibujar-minero.py).
+
+Para cambiar un dibujo se edita ese script y se vuelve a ejecutar
+(python3 tools/dibujar-mina.py). Los PNG no se retocan a mano: test.py
+comprueba que salen del script.
